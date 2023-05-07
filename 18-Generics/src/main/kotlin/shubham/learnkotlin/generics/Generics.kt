@@ -39,8 +39,14 @@ fun <T> printCollection(collection: List<T>) {
 // defining the function "Extension function" that can be invoked with a collection of type <T>.
 fun <T> List<T>.printCollectionExt() {
 
-    for (item in this) {
+    for (item in this) { // now as this is an extension function with generics, we're referring to "list" using "this".
 
         println(item)
     }
 }
+
+// here <T> is nullable <T: Any?> basically nullable, you can make it not nullable, just define like <T: Any> explicitly
+
+// Now in addition to having a generic type as a function parameter, you can also use generics as a functions return type
+// the specific type that returned can be inferred by the compiler.
+// Like java we can also declare generic classes and interfaces in kotlin.

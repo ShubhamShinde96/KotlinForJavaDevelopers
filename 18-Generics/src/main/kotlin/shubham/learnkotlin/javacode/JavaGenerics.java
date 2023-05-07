@@ -10,6 +10,15 @@ public class JavaGenerics {
 
         List<String> list = new ArrayList<>();
         list.add("Hello");
+
+//        boolean b = list instanceof List<String>; as in this line we're getting compiletime error to "List<String> because at runtime JVM cannot
+        // be able to determine if list is instanceOf List<"String">
+
+        // so here java can figure out if list is instanceOf List, like below
+        boolean b = list instanceof List;
+
+        //in kotlin we'll try to do same using "is" operator same as in java we use "instanceOf"
+
 //        list.add(new BigDecimal(10.2));
         list.get(0).toUpperCase();
 
